@@ -1,2 +1,4 @@
-# Sports Landing Page Solutions
-This is a simple landing page that introduces various different sports. This project is to demonstrate the application of CSS skills from The Odin Projects Foundations path. The foundations path of CSS focuses on uses flexboxes and it's properties to style the layout
+# This branch is specific to The Odin Project
+Projects, assignments and practice problems for the Odin Project are placed here. The aim is to demonstrate and apply the learnings from the course into tangible code that works
+
+This is path specific to the Foundations and Front-End Developer Path
