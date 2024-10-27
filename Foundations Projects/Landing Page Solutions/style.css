@@ -15,6 +15,7 @@ body {
     display: flex;
     align-items: center;
     justify-content:center;
+    font-family:Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
 
 }
 
@@ -31,10 +32,6 @@ body {
 }
 
 /* header adjustments and blocks */
-.header {
-    font-family:Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
-
-}
 
 .header-name {
     font-size: 28px;
@@ -57,9 +54,15 @@ body {
 }
 
 .header_links {
-    justify-content: right;
-    align-items: flex-end;
+    gap: 5px;
+    margin-left: auto;
     font-size: 12px;
     font-weight:lighter;
     color: white;
+}
+
+.info-header {
+    font-size: 36px;
+    font-weight: 900;
+    
 }
