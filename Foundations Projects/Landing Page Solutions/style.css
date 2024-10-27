@@ -1,0 +1,65 @@
+/* style.css */
+
+/* initial blocks */
+body {
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    margin: 0;
+}
+
+.header,
+.end-container {
+    background-color: black;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+
+}
+
+.middle-container {
+    background-color:white;
+    display: flex;
+    height: 20vh;
+}
+
+.middle-botcontainer {
+    background: lightgrey;
+    display: flex;
+    height: 20vh;
+}
+
+/* header adjustments and blocks */
+.header {
+    font-family:Optima, Segoe, Segoe UI, Candara, Calibri, Arial, sans-serif;
+
+}
+
+.header-name {
+    font-size: 28px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2px;
+}
+
+.hero{
+    font-weight: 800;
+    font-size: 48px;
+    align-items: flex-start;
+
+}
+
+.hero-image {
+    align-items: flex-end;
+    justify-content: center;
+    margin: auto;
+}
+
+.header_links {
+    justify-content: right;
+    align-items: flex-end;
+    font-size: 12px;
+    font-weight:lighter;
+    color: white;
+}
