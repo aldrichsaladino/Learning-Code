@@ -108,3 +108,11 @@ body {
 .info-description {
     color: black;
 }
+
+/*This section for bot-middle */
+.botmiddle-container {
+    display: flex;
+    text-align: center;
+    background: lightgrey;
+    height: 1000px;
+}
