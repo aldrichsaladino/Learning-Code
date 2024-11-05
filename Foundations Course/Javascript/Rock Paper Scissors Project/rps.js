@@ -6,26 +6,31 @@
 5. Add logic to repeat the rounds to 3
 */
 
+
 // Computer choice logic
-function getComputerChoice () {
-    let choice = math.floor(math.random() *3);
-switch(choice){
-    case 0:
-        return 'rock'
-        break;
-    case 1:
-        return 'rock'
-        break;
-    case 2:
-        return 'rock'
-        break;
-    default:
-        console.warn('Selected choice out of scope. Default to Rock')
+function getcomputerChoice() {
+    let choice = Math.floor(Math.random() *3);
+    switch(choice) {
+        case 0:
+            return 'rock';
+        case 1:
+            return 'paper';
+        case 2:
+            return'scissors';
+        default:
+            console.warn('Selected choice out of scope. Defaulting to Rock');
+            return 'rock';
+    }
+}
+
+//Human choice logic. prompt a choice to be made
+function getUserChoice() {
+    let choice = prompt("Enter rock paper or scissors").toLowerCase();
+    if (choice !== 'rock' && choice !== 'paper' && choice != 'scissors'){
+         console.warn("Invalid Choice! Defaulting to Rock");
         return 'rock';
     }
     return choice;
-    console.log(choice)
 }
 
-
-//Human choice logic. prompt a choice to be made
+//score logic variables
