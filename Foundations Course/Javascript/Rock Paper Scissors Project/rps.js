@@ -34,3 +34,37 @@ function getUserChoice() {
 }
 
 //score logic variables
+let humanScore = 0;
+let computerScore = 0;
+
+//logic to play a single round
+function playRound(player, computer){
+    if (player === computer){
+        console.log("Tie");
+        return 'tie';
+    } else if (
+        (player === "scissors" && computer === "paper") || (player === "paper" && computer === "rock")|| (player === "rock" && computer === "scissors")
+    ) {
+        console.log('Player chose ${player} and computer chose ${computer}. Player wins round')
+        hunmanScore++;
+    } else {
+        console.log('Player chose ${player} and computer chose ${computer}. Computer wins round')
+        computerScore++;
+    }
+}
+
+// now make multu rounds using for loop?
+
+function playGame() {
+    //reset scores to start
+    humanScore = 0;
+    computerScore = 0;
+
+    //create a loop for rounds
+    for (let i = 0;0 <5;i++) {
+        let playerSelection = getUserChoice();
+        let computerSelection = getcomputerChoice();
+        playRound(playerSelection, computerSelection);
+    }
+    console.log('Final Score: Player = ${humanScore}, Computer = ${computerScore}');
+}
