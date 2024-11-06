@@ -8,63 +8,67 @@
 
 
 // Computer choice logic
-function getcomputerChoice() {
-    let choice = Math.floor(Math.random() *3);
-    switch(choice) {
+function getComputerChoice() {
+    let choice = Math.floor(Math.random() * 3);
+    switch (choice) {
         case 0:
             return 'rock';
         case 1:
             return 'paper';
         case 2:
-            return'scissors';
+            return 'scissors';
         default:
             console.warn('Selected choice out of scope. Defaulting to Rock');
             return 'rock';
     }
 }
 
-//Human choice logic. prompt a choice to be made
+// Human choice logic. Prompt a choice to be made
 function getUserChoice() {
-    let choice = prompt("Enter rock paper or scissors").toLowerCase();
-    if (choice !== 'rock' && choice !== 'paper' && choice != 'scissors'){
-         console.warn("Invalid Choice! Defaulting to Rock");
+    let choice = prompt("Enter rock, paper, or scissors").toLowerCase();
+    if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
+        console.warn("Invalid Choice! Defaulting to Rock");
         return 'rock';
     }
     return choice;
 }
 
-//score logic variables
+// Score logic variables
 let humanScore = 0;
 let computerScore = 0;
 
-//logic to play a single round
-function playRound(player, computer){
-    if (player === computer){
+// Logic to play a single round
+function playRound(player, computer) {
+    if (player === computer) {
         console.log("Tie");
         return 'tie';
     } else if (
-        (player === "scissors" && computer === "paper") || (player === "paper" && computer === "rock")|| (player === "rock" && computer === "scissors")
+        (player === "scissors" && computer === "paper") ||
+        (player === "paper" && computer === "rock") ||
+        (player === "rock" && computer === "scissors")
     ) {
-        console.log('Player chose ${player} and computer chose ${computer}. Player wins round')
-        hunmanScore++;
+        console.log(`Player chose ${player} and computer chose ${computer}. Player wins round`);
+        humanScore++;
     } else {
-        console.log('Player chose ${player} and computer chose ${computer}. Computer wins round')
+        console.log(`Player chose ${player} and computer chose ${computer}. Computer wins round`);
         computerScore++;
     }
 }
 
-// now make multu rounds using for loop?
-
+// Function to play multiple rounds
 function playGame() {
-    //reset scores to start
+    // Reset scores to start
     humanScore = 0;
     computerScore = 0;
 
-    //create a loop for rounds
-    for (let i = 0;0 <5;i++) {
+    // Loop for rounds
+    for (let i = 0; i < 5; i++) {
         let playerSelection = getUserChoice();
-        let computerSelection = getcomputerChoice();
+        let computerSelection = getComputerChoice();
         playRound(playerSelection, computerSelection);
     }
-    console.log('Final Score: Player = ${humanScore}, Computer = ${computerScore}');
+    console.log(`Final Score: Player = ${humanScore}, Computer = ${computerScore}`);
 }
+
+// Call the game
+playGame();
