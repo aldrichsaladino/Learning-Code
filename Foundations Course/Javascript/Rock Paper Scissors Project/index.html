@@ -22,12 +22,36 @@
             </div>
         </div>
         <div class="buttons">
-            <buttion class="button-square"
+            <button class="button-square" id="rock">
+                <div class="sign">insert symbol here</div>
+            </buttion>
+            <button class="button-square" id="paper">
+                <div class="sign">insert symbol here</div>
+            </buttion>
+            <button class="button-square" id="scissors">
+                <div class="sign">insert symbol here</div>
+            </buttion>
         </div>
     </main>
     <footer>
-
+        <p>
+            Copyright
+            <script>
+                document.write(new Date().getFullYear())
+            </script>
+            aldrichsaladino
+        </p>
+        <a href="https://github.com/aldrichsaladino" target="_blank">
+            <i class="github"></i>
+        </a>
     </footer>
+
+    <div class="modal" id="endgame-modal">
+        <p class="modal-text" id="end-message"></p>
+        <button class="button-restart">Play again</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <script src="script.js"></script>
         
     <!--<button onclick="playGame()">Start Game</button>
     <div id="gameOutput"></div>
