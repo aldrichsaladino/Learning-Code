@@ -7,56 +7,23 @@
 </head>
 <body>
     <header class="header">
-        <h1 class="title">Rock Paper Scissors</h1>
+        <h1 class="title">Rock Paper Scissors - Best of 5</h1>
     </header>
     <main class="main">
         <div class="scoreboard">
-
-        </div>
-        <div class="score-container">
-            <div class="score-box">
-
-            </div>
-            <div class="score-box">
-
-            </div>
+            <p id="score">Player: 0 - Computer: 0</p>
+            <p id="roundResult">Make your choice to start the game!</p>
         </div>
         <div class="buttons">
-            <button class="button-square" id="rock">
-                <div class="sign">insert symbol here</div>
-            </buttion>
-            <button class="button-square" id="paper">
-                <div class="sign">insert symbol here</div>
-            </buttion>
-            <button class="button-square" id="scissors">
-                <div class="sign">insert symbol here</div>
-            </buttion>
+            <button class="button-square" onclick="playRound('rock')">Rock</button>
+            <button class="button-square" onclick="playRound('paper')">Paper</button>
+            <button class="button-square" onclick="playRound('scissors')">Scissors</button>
         </div>
     </main>
-    <footer>
-        <p>
-            Copyright
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-            aldrichsaladino
-        </p>
-        <a href="https://github.com/aldrichsaladino" target="_blank">
-            <i class="github"></i>
-        </a>
-    </footer>
-
-    <div class="modal" id="endgame-modal">
+    <div class="modal" id="endgame-modal" style="display: none;">
         <p class="modal-text" id="end-message"></p>
-        <button class="button-restart">Play again</button>
+        <button class="button-restart" onclick="restartGame()">Play again</button>
     </div>
-    <div class="overlay" id="overlay"></div>
     <script src="script.js"></script>
-        
-    <!--<button onclick="playGame()">Start Game</button>
-    <div id="gameOutput"></div>
-
-    <script src="rps.js"></script>  --> 
-
 </body>
 </html>
