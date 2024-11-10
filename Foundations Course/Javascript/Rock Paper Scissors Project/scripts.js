@@ -43,18 +43,42 @@ function playRound (playerSelection) {
     )
 
     // 6. LATER - update the rounds tht are played and then the score
-
+    roundsPlayed++;
+    updateScoreboard();
     // LATER - confirm the # of rounds played
+    if(roundsPlayed >=) {
+        displayFinalScore();
+    }
 
 
 //5.  function to update the round to the HTML
-
+function updateRoundResult (message) {
+    const roundResultDiv = document.getElementById("roundResult");
+    roundResultDiv.textContent = message;
+}
 
 
 // 5. function to update the scoreboard result to HTML
-
-
+function updateScoreboard() {
+    const scoreDiv = document.getElementById("score")
+    scoreDiv.textContent = `Player: ${playerScore} - Computer Score: ${cpuScore}`;
+}
 
 // 7. function to then display the total score after round 5
+function displayFinalScore() {
+    const endMessage = document.getElementById("end-message");
+    endMessage.textContent = `Final Score - Player ${playerScore} - Computer Score ${cpuScore}`;
+    document.getElementById("endgame-modal").style.display = "block"
+}
 
 // 8. Function to restart the game --> link it to a restart button? Need to reset the score, and hide modal and udpate scoreboard?
+
+function restartGame() {
+    humanScore = 0;
+    cpuScore = 0;
+    roundsPlayed = 0;
+
+    //reset scoreboard
+    updateScoreboard();
+    updateRoundResult("Make your choice by starting the game");
+}
