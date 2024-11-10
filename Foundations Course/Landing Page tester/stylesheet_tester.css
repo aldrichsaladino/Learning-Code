@@ -1,0 +1,118 @@
+/* stylesheet for the tester/template */
+
+/* General container adjustments */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #f2f2f2;
+    background-color: #1f2937; /* Optional dark background for a sleek look */
+}
+.top-portion { /*need to remove or adjust in smaller classes */
+    background-color:#1f2937;
+    color: white;
+    display:flex;
+    flex-direction: column;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* top portion section */
+.Logo {
+    font-size: 30px;
+    font-weight: bold;
+    justify-content: left;
+    flex-basis: auto;
+    padding-bottom: 10px;
+}
+
+.navigation-links a {
+    color: white;
+    font-size: 14px;
+    flex-direction: row-reverse;
+}
+
+
+.hero { /*this is for the entire container itself */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 60px;
+    height: 400px;
+    margin: 0 auto;
+
+}
+
+.hero-container {
+    flex: 1;
+    margin-right: 10px;
+    justify-content: ;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-right: 10%;
+}
+
+.hero-image img {
+    height: auto;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.hero-header{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*signup button style */
+.signup-button {
+    background-color: rgb(13, 122, 185);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+}
+
+
+/*next section*/
+
+.middle-container {
+    text-align: center;
+    background-color: aliceblue;
+    height: 400px;
+}
+
+.middle-header{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+.image-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    list-style-type: none;
+    margin: 30px;
+}
+
+
+.info-description {
+    color: black;
+}
+
+/*This section for bot-middle */
+.botmiddle-container {
+    display: flex;
+    text-align: center;
+    background: lightgrey;
+    height: 1000px;
+}
