@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <!-- Link to CSS file, ensure the path is correct -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
-        <h1 class="title">Rock Paper Scissors - Best of 5</h1>
+        <h1 class="title">Rock Paper Scissors - First to 3 Wins</h1>
     </header>
     <main class="main">
+        <!-- Scoreboard to display player and computer scores -->
         <div class="scoreboard">
             <p id="score">Player: 0 - Computer: 0</p>
             <p id="roundResult">Make your choice to start the game!</p>
         </div>
+
+        <!-- Buttons for player to choose rock, paper, or scissors -->
         <div class="buttons">
             <button class="button-square" onclick="playRound('rock')">Rock</button>
             <button class="button-square" onclick="playRound('paper')">Paper</button>
             <button class="button-square" onclick="playRound('scissors')">Scissors</button>
         </div>
     </main>
+
+    <!-- Modal to display the final game result after 3 wins -->
     <div class="modal" id="endgame-modal" style="display: none;">
         <p class="modal-text" id="end-message"></p>
         <button class="button-restart" onclick="restartGame()">Play again</button>
     </div>
+
+    <!-- Link to the external JavaScript file, ensure the path is correct -->
     <script src="scripts.js"></script>
 </body>
 </html>
