@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <h1 class="title">Rock Paper Scissors - Best of 5</h1>
+    <header>
+        <h1>Rock Paper Scissors - First to 3 Wins</h1>
     </header>
-    <main class="main">
+    <main>
         <div class="scoreboard">
             <p id="score">Player: 0 - Computer: 0</p>
             <p id="roundResult">Make your choice to start the game!</p>
         </div>
+
         <div class="buttons">
-            <button class="button-square" onclick="playRound('rock')">Rock</button>
-            <button class="button-square" onclick="playRound('paper')">Paper</button>
-            <button class="button-square" onclick="playRound('scissors')">Scissors</button>
+            <button onclick="playRound('rock')">Rock</button>
+            <button onclick="playRound('paper')">Paper</button>
+            <button onclick="playRound('scissors')">Scissors</button>
         </div>
     </main>
+
     <div class="modal" id="endgame-modal" style="display: none;">
-        <p class="modal-text" id="end-message"></p>
-        <button class="button-restart" onclick="restartGame()">Play again</button>
+        <p id="end-message"></p>
+        <button onclick="restartGame()">Play again</button>
     </div>
+
     <script src="scripts.js"></script>
 </body>
 </html>

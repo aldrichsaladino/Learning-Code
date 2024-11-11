@@ -1,1 +1,49 @@
 /* style.css */
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: slategray;
+}
+
+.header-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.header-text {
+    font-style: italic;
+}
+
+.scoreboard {
+    height: 200px;
+
+
+}
+
+.buttons {
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+
+}
+
+
+.modal {
+    max-width: 500px;
+    align-items: center;
+    background-color: white;
+    border-color: cadetblue;
+    border-radius: 8px;    
+}
+
+#end-message {
+    color: black;
+    font-size: 21px;
+    font-style: italic;
+}
