@@ -17,15 +17,15 @@
         </div>
 
         <div class="buttons">
-            <button onclick="playRound('rock')">Rock</button>
-            <button onclick="playRound('paper')">Paper</button>
-            <button onclick="playRound('scissors')">Scissors</button>
+            <img src = "https://em-content.zobj.net/source/apple/391/raised-fist_270a.png" alt="Rock" onclick="playRound('rock')" class="choice">
+            <img src="https://em-content.zobj.net/source/apple/391/raised-hand_270b.png" alt="paper" onclick="playRound('paper')" class="choice">
+            <img src="https://em-content.zobj.net/source/apple/391/victory-hand_270c-fe0f.png" alt="scissors" onclick="playRound('scissors')" class="choice">
         </div>
     </main>
 
     <div class="modal" id="endgame-modal" style="display: none;">
         <p id="end-message"></p>
-        <button onclick="restartGame()">Play again</button>
+        <button id="restartButton" onclick="restartGame()">Play again</button>
     </div>
 
     <script src="scripts.js"></script>

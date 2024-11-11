@@ -1,84 +1,73 @@
-/* The goal is to play rock paper scissors. The following needs to occur:
-1. Logic for a computer choice
-2. Logic for the human choice
-3. Declare the score variables
-4. Add logic for multiple rounds
-5. Add logic to repeat the rounds to 3
-*/
-
-
 // Initialize scores and the round counter
 let playerScore = 0;
 let cpuScore = 0;
 let roundsPlayed = 0;
 
-
-// create a function for the computer choice
+// Function for the computer choice
 function getCPUChoice() {
-    const Choices = ['rock', 'paper', 'scissors']
-    const randomIndex = Math.floor(Math.random() * Choices.length) // this pulls random number by length which is 3
+    const Choices = ['rock', 'paper', 'scissors'];
+    const randomIndex = Math.floor(Math.random() * Choices.length);
     return Choices[randomIndex];
 }
 
-
-// function to play a single round
-function playRound (playerSelection) {
-    //get the player selection
+// Function to play a single round
+function playRound(playerSelection) {
     const cpuSelection = getCPUChoice();
-}
 
-    // if switch statements to determine the winner vs loser
+    // Determine the winner
     if (playerSelection === cpuSelection) {
-        updateRoundResult(`It's a tie! Both players chose ${playerSelection}`)
+        updateRoundResult(`It's a tie! Both players chose ${playerSelection}`);
     } else if (
         (playerSelection === "rock" && cpuSelection === "scissors") ||
         (playerSelection === "paper" && cpuSelection === "rock") ||
-        (playerSelection === "rock" && cpuSelection === "scissors")
+        (playerSelection === "scissors" && cpuSelection === "paper")
     ) {
-        humanScore++;
-        updateRoundResult (`You win! ${playerSelection} beats ${cpuSelection}`)
-    } else (
-        computerScore++;
-        updateRoundResult(`You Lost! ${playerSelection} loses to ${cpuSelection}`)
-    )
-
-    // 6. LATER - update the rounds tht are played and then the score
-    roundsPlayed++;
-    updateScoreboard();
-    // LATER - confirm the # of rounds played
-    if(roundsPlayed >=) {
-        displayFinalScore();
+        playerScore++;
+        updateRoundResult(`You win! ${playerSelection} beats ${cpuSelection}`);
+    } else {
+        cpuScore++;
+        updateRoundResult(`You lost! ${cpuSelection} beats ${playerSelection}`);
     }
 
+    // Update rounds played and scoreboard
+    roundsPlayed++;
+    updateScoreboard();
 
-//5.  function to update the round to the HTML
-function updateRoundResult (message) {
+    // Check if the game is over (first to 3 wins)
+    if (playerScore >= 3 || cpuScore >= 3) {
+        displayFinalScore();
+    }
+}
+
+// Function to update the round result in HTML
+function updateRoundResult(message) {
     const roundResultDiv = document.getElementById("roundResult");
     roundResultDiv.textContent = message;
 }
 
-
-// 5. function to update the scoreboard result to HTML
+// Function to update the scoreboard in HTML
 function updateScoreboard() {
-    const scoreDiv = document.getElementById("score")
-    scoreDiv.textContent = `Player: ${playerScore} - Computer Score: ${cpuScore}`;
+    const scoreDiv = document.getElementById("score");
+    scoreDiv.textContent = `Player: ${playerScore} - Computer: ${cpuScore}`;
 }
 
-// 7. function to then display the total score after round 5
+// Function to display the final score after the game ends
 function displayFinalScore() {
     const endMessage = document.getElementById("end-message");
-    endMessage.textContent = `Final Score - Player ${playerScore} - Computer Score ${cpuScore}`;
-    document.getElementById("endgame-modal").style.display = "block"
+    endMessage.textContent = `Final Score - Player: ${playerScore} - Computer: ${cpuScore}`;
+    document.getElementById("endgame-modal").style.display = "block";
 }
 
-// 8. Function to restart the game --> link it to a restart button? Need to reset the score, and hide modal and udpate scoreboard?
-
+// Function to restart the game
 function restartGame() {
-    humanScore = 0;
+    playerScore = 0;
     cpuScore = 0;
     roundsPlayed = 0;
 
-    //reset scoreboard
+    // Reset scoreboard and round result
     updateScoreboard();
-    updateRoundResult("Make your choice by starting the game");
+    updateRoundResult("Make your choice to start the game!");
+
+    // Hide the endgame modal
+    document.getElementById("endgame-modal").style.display = "none";
 }

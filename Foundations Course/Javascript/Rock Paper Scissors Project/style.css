@@ -4,7 +4,11 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color: slategray;
+    background-color:#252d35;
+    align-items: center;
+    color: white;
+    margin: 0;
+    font-family:Arial, sans-serif;
 }
 
 .header-1 {
@@ -14,6 +18,9 @@ body {
     color: white;
     font-size: 28px;
     font-weight: bold;
+    background-color: #141424;
+    width: 100%;
+    padding: 20px 0;
 }
 
 .header-text {
@@ -21,29 +28,79 @@ body {
 }
 
 .scoreboard {
-    height: 200px;
-
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    font-size: 12px;
+    text-align: center;
 }
 
 .buttons {
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
-    color: white;
+    gap: 20px;
+    background-color: #1e3a5f;
+    border-radius: 8px;
 
 }
 
+button {
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #3a3f47;
+    border: none;
+    border-radius: 5px;
+}
 
 .modal {
-    max-width: 500px;
-    align-items: center;
+    position:fixed;
+    width: 100%;
+    padding: 20px;
     background-color: white;
-    border-color: cadetblue;
-    border-radius: 8px;    
+    color: black;
+    border: 2px solid cadetblue;
+    border-radius: 5px;
+    display: none;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 #end-message {
     color: black;
     font-size: 21px;
     font-style: italic;
+}
+
+#restartButton {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 5px;
+}
+
+.choice {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.2s;
+}
+
+.choice:hover{
+    transform:scale(1.1);
+}
+
+
+.choice{
+
+    cursor: pointer;
+    transform: scale(1.1); /*this will zoom the hover*/
 }
