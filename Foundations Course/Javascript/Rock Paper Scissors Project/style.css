@@ -4,18 +4,19 @@
 body {
     display: flex;
     flex-direction: column;
-    background-color:#252d35;
+    background-color:rgb(11, 11, 17);
     align-items: center;
     color: white;
-    margin: 0;
-    font-family:Arial, sans-serif;
+    margin:20px 0;
+    font-family:'Press Start 2P', cursive, Arial, sans-serif;
+    font-size: 18px;
 }
 
 .header-1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: #f0db4f;
     font-size: 28px;
     font-weight: bold;
     background-color: #141424;
