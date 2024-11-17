@@ -1,49 +1,91 @@
-/* style.css */
+/*style.css */
 
 
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: slategray;
+ display: flex;
+ flex-direction: column;
+ background-color: #252d35;
+ align-items: center;
+ color: white;
+ font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+ padding: 20px;
 }
 
-.header-1 {
-    display: flex;
+header h1 {
+    font-size: 20px;
+    color: #f0db4f;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.scoreboard-container {
+    padding: 30px;
+    text-align: center;
     justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 16px;
 }
 
-.header-text {
-    font-style: italic;
+.roundresult {
+    font-size: 14px;
 }
 
-.scoreboard {
-    height: 200px;
-
-
-}
 
 .buttons {
-    align-items: center;
+    display: flex;
     justify-content: space-evenly;
-    color: white;
-
+    padding: 5px;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: #f0db4f;
 }
 
+.choice {
+    background-color: #3a3f47;
+    padding: 100px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.5s, background-color 0.5s;
+    border-radius: 10px;
+}
+
+.choice:hover {
+    transform: scale(1.15);
+    background-color: #f0db4f;
+}
 
 .modal {
-    max-width: 500px;
+    width: 100%;
+    margin-right: 10px;
     align-items: center;
-    background-color: white;
-    border-color: cadetblue;
-    border-radius: 8px;    
+    padding: 10px;
+    background: #54565a;
+    border: 2px solid;
+    border-color: white;
+    border: 5px;
+    display: none; /*it will not be displayed till after via js and then hidden again */
 }
 
+
 #end-message {
+    color: white;
+    font-size: 14px;
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+
+}
+
+#restartButton {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif;
+    background-color: #f0db4f;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
     color: black;
-    font-size: 21px;
-    font-style: italic;
+
 }
