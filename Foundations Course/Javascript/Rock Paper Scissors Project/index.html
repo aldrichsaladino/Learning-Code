@@ -6,6 +6,9 @@
     <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
     <main class="container">
@@ -13,11 +16,20 @@
             <h1>Rock Paper Scissors - First to 3 Wins</h1>
         </header>
         <div class="scoreboard">
+    <container>
+    <header>
+        <h1 class="header-text">Rock Paper Scissors - First to 3 Wins</h1>
+    </header>
+    <main>
+        <div class="scoreboard-container">
             <p id="score">Player: 0 - Computer: 0</p>
             <p id="roundResult">Make your choice to start the game!</p>
         </div>
 
         <div class="buttons">
+            <img src = "https://em-content.zobj.net/source/apple/391/raised-fist_270a.png" alt="Rock" onclick="playRound('rock')" class="choice">
+            <img src="https://em-content.zobj.net/source/apple/391/raised-hand_270b.png" alt="paper" onclick="playRound('paper')" class="choice">
+            <img src="https://em-content.zobj.net/source/apple/391/victory-hand_270c-fe0f.png" alt="scissors" onclick="playRound('scissors')" class="choice">
             <img src = "https://em-content.zobj.net/source/apple/391/raised-fist_270a.png" alt="Rock" onclick="playRound('rock')" class="choice">
             <img src="https://em-content.zobj.net/source/apple/391/raised-hand_270b.png" alt="paper" onclick="playRound('paper')" class="choice">
             <img src="https://em-content.zobj.net/source/apple/391/victory-hand_270c-fe0f.png" alt="scissors" onclick="playRound('scissors')" class="choice">
@@ -27,7 +39,10 @@
     <div class="modal" id="endgame-modal" style="display: none;">
         <p id="end-message"></p>
         <button id="restartButton" onclick="restartGame()">Play again</button>
+        <button class="restart" id="restartButton" onclick="restartGame()">Play again</button>
     </div>
+    </container>
+
 
     <script src="scripts.js"></script>
 </body>
