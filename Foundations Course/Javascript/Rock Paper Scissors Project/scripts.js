@@ -2,6 +2,7 @@
 let playerScore = 0;
 let cpuScore = 0;
 let roundsPlayed = 0;
+let gameOver = false;
 
 // Function for the computer choice
 function getCPUChoice() {
@@ -12,11 +13,27 @@ function getCPUChoice() {
 
 // Function to play a single round
 function playRound(playerSelection) {
+    if (gameOver) {
+        return;
+    }
+
     const cpuSelection = getCPUChoice();
 
-    // Determine the winner
+    const emojiMap = {
+        rock: '✊',
+        paper: '✋',
+        scissors: '✌️'
+    };
+
+    document.getElementById('player-choice').textContent = emojiMap[playerSelection];
+    document.getElementById('cpu-choice').textContent = emojiMap[cpuSelection];
+
+    // Get the vs-text element
+    const vsText = document.getElementById('vs-text');
+
     if (playerSelection === cpuSelection) {
         updateRoundResult(`It's a tie! Both players chose ${playerSelection}`);
+        vsText.style.color = "orange"; // Neutral color for a tie
     } else if (
         (playerSelection === "rock" && cpuSelection === "scissors") ||
         (playerSelection === "paper" && cpuSelection === "rock") ||
@@ -24,18 +41,24 @@ function playRound(playerSelection) {
     ) {
         playerScore++;
         updateRoundResult(`You win! ${playerSelection} beats ${cpuSelection}`);
+        vsText.style.color = "green"; // Green for a win
     } else {
         cpuScore++;
         updateRoundResult(`You lost! ${cpuSelection} beats ${playerSelection}`);
+        vsText.style.color = "red"; // Red for a loss
     }
 
-    // Update rounds played and scoreboard
-    roundsPlayed++;
+    // Add the shake animation class
+    vsText.classList.add("shake");
+
+    // Remove the shake class after the animation ends
+    setTimeout(() => vsText.classList.remove("shake"), 500);
+
     updateScoreboard();
 
-    // Check if the game is over (first to 3 wins)
     if (playerScore >= 3 || cpuScore >= 3) {
         displayFinalScore();
+        gameOver = true;
     }
 }
 
@@ -63,6 +86,7 @@ function restartGame() {
     playerScore = 0;
     cpuScore = 0;
     roundsPlayed = 0;
+    gameOver = false;
 
     // Reset scoreboard and round result
     updateScoreboard();
